@@ -1,0 +1,10 @@
+doctype html
+html
+    head
+        title= `${title || 'Blog'}`
+        include meta
+        include styles
+    body
+        .container.mdl-card.mdl-shadow--2dp
+            block content
+    
