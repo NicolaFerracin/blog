@@ -10,11 +10,12 @@ block content
             h1!= title || 'Blog'
             ul.blog-posts
                 for post in getPosts()
-                    li.blog-post
-                        a(href=`/post/${post.slug}`)
-                            h3 #{post.title}
-                            p!= post.description
-                            time #{h.prettifyDate(post.date)}
+                    if post.publish && !h.isFutureDate(post.date)
+                        li.blog-post
+                            a(href=`/post/${post.slug}`)
+                                h3 #{post.title}
+                                p!= post.description
+                                time #{h.prettifyDate(post.date)}
 
-                        +tags(post.tags)
-                    hr
+                            +tags(post.tags)
+                        hr
