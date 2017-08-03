@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    if currentPath !== '/'
+        a.back(href='/') Blog ➔
+    .row
+        .mdl-card__content
+            h1 #{post.title}
+            p!= post.content

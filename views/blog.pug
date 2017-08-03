@@ -1,0 +1,20 @@
+extends layout
+
+include mixins/_tags
+
+block content
+    if currentPath !== '/'
+        a.back(href='/') Blog ➔
+    .row
+        .mdl-card__content
+            h1!= title || 'Blog'
+            ul.blog-posts
+                for post in getPosts()
+                    li.blog-post
+                        a(href=`/post/${post.slug}`)
+                            h3 #{post.title}
+                            p!= post.description
+                            time #{h.prettifyDate(post.date)}
+
+                        +tags(post.tags)
+                    hr

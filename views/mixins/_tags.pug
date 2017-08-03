@@ -1,0 +1,5 @@
+mixin tags(tags = [])
+    ul.blog-tags
+        for tag in tags
+            li.blog-tag 
+                a(href=`/tag/${tag}`) #{tag}
