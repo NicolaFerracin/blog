@@ -49,13 +49,6 @@ strong {
 .mdl-card__content h1 {
     margin: 0;
 }
-
-/* Contacts */
-.contacts {
-    display: flex;
-    justify-content: space-around;
-}
-
 .container a {
     transition: 0.2s;
     text-decoration: none;
@@ -68,169 +61,46 @@ strong {
     text-decoration: none;
 }
 
-.container a:hover {
-    margin-top: -5px;
-    cursor: pointer;
+.container .back {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-/* Projects */
-.projects {
-    border-top: 2px solid var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.project-sofiamacedo {
-    background: url(../assets/images/sofiamacedo.svg) center / contain no-repeat;
-}
-
-.project-sofiamacedo__bg {
-    width: 100%;
-    height: 20px;
-    transition: 0.6s;
-    align-self: flex-end;
-    z-index: -1;
-}
-
-.project-sofiamacedo__bg1 {
-    background-color: #76e3b9;
-}
-.project-sofiamacedo__bg2 {
-    background-color: #ffb996;
-}
-.project-sofiamacedo__bg3 {
-    background-color: #98deeb;
-}
-.project-sofiamacedo__bg4 {
-    background-color: #ffe25e;
-}
-
-.project-budgetify {
-    background: url(../assets/images/budgetify.jpg) center / cover;
-}
-
-.project-js30 {
-    background: url(../assets/images/js30.jpg) center / cover;
-}
-
-.project-taadas {
-    background: url(../assets/images/taadas.jpg) center / cover;
-}
-
-.project-svec {
-    background: url(../assets/images/svec.jpg) center / cover;
-}
-
-.project__preview {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    background-blend-mode: darken;
-    transition: 0.6s;
-    transform-style: flat;
-}
-
-.projects .project {
+ul.blog-posts, ul.blog-tags {
     padding: 0;
-    height: 200px;
-    color: var(--icons-color);
-    position: relative;
-    transition: all 0.6s;
 }
 
-.project__preview:hover {
-    background-color: transparent;
-    color: transparent;
+ul.blog-posts li.blog-post, ul.blog-tags li.blog-tag  {
+    list-style: none;
 }
 
-.project__preview:hover a {
-    color: var(--primary-text);
+ul.blog-posts li.blog-post {
+    margin: 20px 0;
 }
 
-.project__preview:hover .project__footer a:hover {
-    color: var(--primary-color);
+ul.blog-tags li.blog-tag {
+    background-color: var(--primary-color-light);
+    display: inline-block;
+    padding: 0px 7px;
+    margin: 0 10px 0 0;
 }
 
-.project .project__preview a:focus {
-    color: transparent;
-}
-
-.project .project__preview:hover a:focus {
-    color: var(--primary-color);
-}
-
-
-.project .project-title {
-    position: absolute;
-    margin: auto;
-    text-align: center;
-}
-
-.project__footer {
-    position: absolute;
-    align-self: center;
+ul.blog-posts li.blog-post a {
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
 }
 
-.project__footer a {
-    color: transparent;
+ul.blog-posts li.blog-post a h3, ul.blog-posts li.blog-post a p {
+    display: inline-block;
+    margin: 0;
 }
 
-.project__info {
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    color: black;
-    right: 0;
-    top: 0;
-    transition: 0.6s;
-    transform: translateX(10000px);
+ul.blog-posts li.blog-post p {
+    padding-left: 10px;
 }
 
-.project__info .project__info-content {
-    padding: 30px;
-}
-
-.project__info .project__info-content a {
-    text-decoration: underline;
-}
-
-.project__info .project__info-content a:focus {
-    color: var(--primary-color);
-}
-
-.project__info .project__info-close {
-    float: right;
-    margin: 5px;
-}
-
-.project__info .project__info-close:hover {
-    margin: 5px;
-}
-
-.project__preview:hover .btn-nf {
-    border: 1px solid var(--primary-text);
-    background-color: var(--icons-color);
-}
-
-a.btn-nf {
-    padding: 10px;
-    border-radius: 2px;
-    background-color: transparent;
-}
-
-.project__preview:hover a.btn-nf:hover {
-    border-color: var(--primary-color);
-    margin-bottom: 5px;
-    background-color: var(--icons-color);
-}
-
-@media(max-width: 425px) {
-    a.btn-nf span {
-        display: none;
-    }
+ul.blog-posts li.blog-post time {
+    margin-left: auto;
 }
