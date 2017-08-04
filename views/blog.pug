@@ -3,8 +3,7 @@ extends layout
 include mixins/_tags
 
 block content
-    if currentPath !== '/'
-        a.back(href='/') Blog ➔
+    include includes/actions
     .row
         .mdl-card__content
             h1!= title || 'Blog'
