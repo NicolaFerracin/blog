@@ -7,6 +7,7 @@ block content
     .row
         .mdl-card__content
             if post.publish && !h.isFutureDate(post.date)
+                p!= h.prettifyDate(post.date)
                 h1 #{post.title}
                 +tags(post.tags)
                 p!= post.content

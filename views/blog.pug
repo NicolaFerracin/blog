@@ -13,7 +13,6 @@ block content
                         li.blog-post
                             a(href=`/post/${post.slug}`)
                                 h3 #{post.title}
-                                p!= post.description
                                 time #{h.prettifyDate(post.date)}
 
                             +tags(post.tags)
