@@ -24,8 +24,6 @@
     storeNightMode(nightMode);
 
     document.toggleNightMode = function() {
-        console.log(nightMode)
-        console.log(!nightMode)
         nightMode = !nightMode;
         const newPalette = palettes[nightMode];
         document.body.classList.add('animate');
