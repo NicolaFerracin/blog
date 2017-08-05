@@ -8,3 +8,4 @@
 - [x] night reading option
 - [ ] add comments
 - [ ] SEO optimization
+- [ ] social buttons
