@@ -10,6 +10,7 @@ const cacheTime = 60*60*24*1000*7; // 7 days
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.use('/css', express.static(__dirname + '/css', { maxAge: cacheTime }));
+app.use('/images', express.static(__dirname + '/images', { maxAge: cacheTime }));
 app.use((req, res, next) => {
   res.locals.h = helpers;
   res.locals.currentPath = req.path;
