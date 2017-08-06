@@ -1,12 +1,12 @@
 {{{
   "title": "Mastering the console methods",
-  "tags": ["JavaScript", "August 2016", "console"],
+  "tags": ["JavaScript", "August 2017", "console"],
   "date": "8-4-2017",
   "description": "Going beyond console.log and exploring all the less known but very useful methods.",
   "publish": true
 }}}
 
-As a JavaScript developer we probably find ourself logging stuff to the browser console many, MANY times. The `console.log()` method is an invaluable yet so simple tool to have and master.
+As JavaScript developers we probably find ourself logging stuff to the browser console many, MANY times. The `console.log()` method is an invaluable yet so simple tool to have and master.
 
 For a long time, I myself used the `.log()` method only but there are so many other useful methods out there and I've seen them mentioned so few times, so here's a collection of them and how to use them.
 
@@ -352,5 +352,3 @@ console.profile() + console.profileEnd() -> profile what happens between start a
 ```
 monitor(fn) -> function available only in the console, prints every time fn gets called, together with the parameters that have been fed to it
 ```
-
-Thank you for readin!
