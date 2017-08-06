@@ -2,6 +2,7 @@
   "title": "Mastering the console methods",
   "tags": ["JavaScript", "August 2017", "console"],
   "date": "8-4-2017",
+  "id": "08ac5cbc-3ee7-4740-9ccb-f22055ff7884",
   "description": "Going beyond console.log and exploring all the less known but very useful methods.",
   "publish": true
 }}}
