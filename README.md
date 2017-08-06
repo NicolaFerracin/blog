@@ -6,6 +6,6 @@
 - [x] Single post
 - [x] /tag/:tag routing
 - [x] night reading option
-- [ ] add comments
+- [x] add comments
 - [ ] SEO optimization
 - [ ] social buttons
