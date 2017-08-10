@@ -214,7 +214,7 @@ const countries = [{
 ]
 console.table(countries);
 ```
-<a href="../images/1_consoletable.png" target="_blank"><img src="../images/1_consoletable.png" alt-text="console.table()" title="console.table()"></a>
+<a href="../images/_1/1_consoletable.png" target="_blank"><img src="../images/_1/1_consoletable.png" alt-text="console.table()" title="console.table()"></a>
 
 
 ## Grouping console.log
@@ -242,7 +242,7 @@ for (let i = 5; i < 10; i++) {
   console.groupEnd(`Loop ${i}`)
 }
 ```
-<a href="../images/1_consolegroup.png" target="_blank"><img src="../images/1_consolegroup.png" alt-text="console.group()" title="console.group()"></a>
+<a href="../images/_1/1_consolegroup.png" target="_blank"><img src="../images/_1/1_consolegroup.png" alt-text="console.group()" title="console.group()"></a>
 
 
 ## Bonus methods
