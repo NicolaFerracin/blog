@@ -1,1 +1,0 @@
-const res = [["JavaScript",377931],["HTML",237943],["CSS",103235],["Python",49816],["Racket",21421],["C",17462],["Java",5297],["Objective-C",4404],["Shell",2929],["Assembly",2186],["Makefile",529]];

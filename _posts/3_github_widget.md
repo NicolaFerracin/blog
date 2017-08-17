@@ -1,3 +1,12 @@
+{{{
+  "title": "GitHub widget Tutorial",
+  "tags": ["JavaScript", "August 2017", "Tutorial", "API", "Vanilla JS", "Function Programming", "GitHub"],
+  "date": "8-17-2017",
+  "id": "b6118519-8d3e-4913-b185-f8bcfb58435e",
+  "description": "A tutorial on how to build a widget using Vanilla JavaScript and GitHub API.",
+  "publish": true
+}}}
+
 This is a two-parts tutorial on how to create a nice little widget displaying all the languages we used in our GitHub repos.
 
 The whole tutorial will cover the following:
@@ -6,7 +15,11 @@ The whole tutorial will cover the following:
 2. Create HTML widget through vanilla JS
 3. Update widget as API responses come in
 
-In this first part we are going to focus on getting and formatting the data, while in the second part we will take part of the rendering.
+In this first part we are going to focus on getting and formatting the data, while in the second part we will take care of the rendering.
+
+<a href="../images/_3/result.png" target="_blank"><img src="../images/_3/result.png" alt-text="GitHub widget" title="GitHub Widget"></a>
+
+**NOTE** you can find the full code of this first part [here >>](https://gist.github.com/NicolaFerracin/ab4ad6a2004d633164cbe06d36af8027).
 
 ## The API
 
@@ -34,13 +47,13 @@ fetch(gitHubApi.base + gitHubApi.reposList(username))
 By taking a look at our `repos` object that we get back from GitHub we can make some observations:
 - all repos are included in the list, also forked repos which - in my case at least - we might not want to include
 - for each repo we have a list of multiple endpoints we can call to get additional information, including the list of used languages (see `languages_url`)
-- if you hit the GitHub API with this or others endpoints multiple times, you might find yourself getting `Exceeded limit rate` error! As most APIs out there, there is a fixed amount of how many `free` calls you can make before you reach the limit.
+- if we hit the GitHub API with this or others endpoints multiple times, we might find ourselves getting `Rate limit exceeded` error! As most APIs out there, there is a fixed amount of how many `free` calls we can make before we reach the limit.
 
 We are now going to address all the above points.
 
 ### Filter repos
 
-As said before, we might want to filter out some repos from our list. Criterias can differ: from creation date, forking, last activity... you can choose! In my case I wanted to remove all repos that were forked, as it wouldn't be fair to consider code written mostly by someone else.
+As said before, we might want to filter out some repos from our list. Criterias can differ: from creation date, forking, last activity... you can choose! In my case I wanted to remove all repos that were forked, as it wouldn't be fair to consider code written almost entirely by someone else.
 
 ```javascript
 const gitHubApi = {
@@ -56,17 +69,11 @@ fetch(gitHubApi.base + gitHubApi.reposList(username))
     ));
 ```
 
-This is it! As mentioned above we can also use other criterias in our `filter()` function, such as
-```javascript
-// TODO
-```
-
 ### Getting the languages_url endpoint
 
 As we saw, we don't even have to bother constructing the endpoint to get all languages for a specific repo, as the `repo` object we get back from GitHub already includes the URL we need. we can extract it by doing the following:
 
 ```javascript
-// OLD CODE
 const gitHubApi = {
     base: 'https://api.github.com',
     reposList: (username) => `/users/${username}/repos`
@@ -86,16 +93,14 @@ Most APIs offer an open amount of calls we can make before needing to authentica
 
 If you haven't run into this problem yet, then it means you didn't reach the limit yet. But you will probably run into it quite soon, so better fix it now.
 
-// TODO ADD DOCUMENTATION
-
 To let GitHub know that we are authenticated users and we are actually allowed to make these API calls we need to:
 - generate an API token
 - send our username in every API call
 - send our token in every API call 
 
-To get the token, just login to GitHub and // TODO
+To get the token, just login to **GitHub**, go to **Settings** and at the bottom of the left pane click on **Personal access tokens**. With this token we can now make all API calls we want.
 
-To send our username and token in our API calls, we need to add them in the HTTP headers that are going to be part of our calls.
+Now, to send our username and token in our API calls, we need to add them in the HTTP headers that are going to be part of our calls.
 
 ```javascript
 const gitHubApi = {
@@ -121,7 +126,7 @@ fetch(gitHubApi.base + gitHubApi.listRepos(username), httpConfig) // <-- Add the
     );
 ```
 
-Now that we are authenticated we can make as many API calls as we need. If you are experiencing any issue, it might be due to the different HTTP API you are using, make sure you are adding the HTTP configuration in the proper way.
+Now that we are authenticated we can make as many API calls as we need. If you are experiencing any issue, it might be due to the different method you are using to send HTTP requests, make sure you are adding the HTTP configuration in the proper way.
 
 ### Get languages for repo
 
@@ -141,6 +146,7 @@ function getLanguagesForRepo(url) {
     fetch(url, httpConfig)
         .then(res => res.json())
         .then(repoLangs => console.log(repoLangs));
+}
 ```
 
 Our return value looks something like this:
@@ -163,13 +169,13 @@ A short recap: we now have code that makes:
 - 1 API call to get all our repos
 - 1 API call for each repo to get all languages used in it
 
-What we need is all languages used across all our repos, so we need to put the pieces together. You can see below the way I approached the problem, but there isn't only one right solution, so feel free to experiment different aggregations and leave me suggestions and improvments in the comments below.
+What we need is all languages used across all our repos, and not split by different repos, so we need to put all the pieces together. You can see below the way I approached the problem, but there isn't only one right solution, so feel free to experiment different aggregations and leave me suggestions and improvments in the comments below.
 
 The way I approached it was to:
 - keep updating a single object as soon as API responses come in
 - turn this object into an array, sort it and feed it to a function that takes care of the actual rendering of the widget
 
-I chose to keep the languages used in an object as it has direct access by key and it's therefor easier to update update. I then opted for turning the object into an array as I find it's a better data type for sorting and for looping through during the actual rendering.
+I chose to keep the languages used in an object as it has direct access by key and it's therefor easier to update. I then opted for turning the object into an array as I find it's a better data type for sorting and for looping through during the actual rendering.
 
 Let's go step-by-step by first storing all languages in a single object while they keep coming in:
 
@@ -196,6 +202,7 @@ function getLanguagesForRepo(url) {
                 }
             });
         });
+}
 ```
 
 Now that we have all languages saved in a single object that keeps getting updating, we can do something with them! But first, to make it easier to work with them during the rendering, let's transform the object into an array that will looks something like this: 
@@ -226,15 +233,19 @@ function getLanguagesForRepo(url) {
                 // ... sort the resulting array of arrays from above so the most used languages come first
                 .sort((a, b) => b[1] - a[1]);
         });
+}
 ```
 
 ## Summary
 
-This is it for the first part of this tutorial! To sum it up:
+This is it for the first part of this tutorial! 
+
+To sum it up:
 - we use the GitHub API to get the list of our repos
 - we filter the list of repos and we remove 'unwanted' repos (optional)
 - for each repo we then get the list of languages used in it
-- as we are firing multiple request, we have to keep track of async repsonses coming in all the time, for this reason, as soon as a response comes in, we update our `allLanguages` variable to include latest results
-- once `allLanguages` is done updating we can start worrying about the rendering, and to make our life easier, we turn the object into a sorted array
+- as we are firing multiple request, we have to keep track of async responses coming in all the time, for this reason, as soon as a response comes in, we update our `allLanguages` variable to include latest results
+- once `allLanguages` is done updating we can start worrying about the rendering
+- to make our life easier for the rendering, we turn the object into a sorted array
 
 In the next tutorial we will cover the rendering part, so don't miss out!
