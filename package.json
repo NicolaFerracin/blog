@@ -13,5 +13,8 @@
     "express": "^4.15.3",
     "poet": "^2.0.2",
     "pug": "^2.0.0-rc.3"
+  },
+  "devDependencies": {
+    "cors": "^2.8.4"
   }
 }
