@@ -231,4 +231,4 @@ document.querySelectorAll('.container #c, .container')
 
 As mentioned in the beginning this whole post was supposed to be a short introduction to the different JS methods available to us for selecting DOM Elements, but it quickly got out of hands as there are multiple quirks and interesting notes that I felt I should point out while on the subject. As we covered a lot of stuff, here's a table recapping all methods, complete with parameters and return values.
 
-<a href="../images/_2/2_js_methods_selectors.png" target="_blank"><img src="../images/_2/2_js_methods_selectors.png" alt-text="Javas" title="console.table()"></a>
+<a href="../images/_2/2_js_methods_selectors.png" target="_blank"><img src="../images/_2/2_js_methods_selectors.png" alt-text="JavaScript selectors summary" title="console.table()"></a>
