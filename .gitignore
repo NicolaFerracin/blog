@@ -2,3 +2,4 @@ node_modules/
 ideas
 index.html
 *.env
+examples/
