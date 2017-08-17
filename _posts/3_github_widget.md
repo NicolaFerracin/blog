@@ -19,7 +19,7 @@ In this first part we are going to focus on getting and formatting the data, whi
 
 <a href="../images/_3/result.png" target="_blank"><img src="../images/_3/result.png" alt-text="GitHub widget" title="GitHub Widget"></a>
 
-**NOTE** you can find the full code of this first part [here >>](https://gist.github.com/NicolaFerracin/ab4ad6a2004d633164cbe06d36af8027).
+**NOTE** you can find the full code of this first part <a href="https://gist.github.com/NicolaFerracin/ab4ad6a2004d633164cbe06d36af8027" target="_blank" title="GitHub Widget Tutorial Part 1">here >></a>.
 
 ## The API
 
