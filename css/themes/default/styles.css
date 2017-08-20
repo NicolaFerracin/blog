@@ -54,6 +54,15 @@ strong {
     margin: 0;
 }
 
+.mdl-card__content h1,
+.mdl-card__content h2,
+.mdl-card__content h3,
+.mdl-card__content h4,
+.mdl-card__content h5,
+.mdl-card__content h6 {
+    word-break: break-all;
+}
+
 .mdl-card__content img {
     max-width: 100%;
 }
@@ -103,7 +112,7 @@ ul.blog-tags li.blog-tag {
     background-color: var(--primary-color-light);
     display: inline-block;
     padding: 0px 7px;
-    margin: 0 10px 0 0;
+    margin: 5px 10px 0 0;
 }
 
 ul.blog-tags li.blog-tag a {
