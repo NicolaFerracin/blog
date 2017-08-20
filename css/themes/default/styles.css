@@ -69,13 +69,20 @@ strong {
 
 .container a {
     transition: 0.2s;
-    text-decoration: none;
     color: inherit;
+    text-decoration: underline;
 }
 
 .container a:hover, .container a:focus {
     transition: 0.2s;
     color: var(--primary-color);
+}
+
+.container a.no-decoration {
+    text-decoration: none;
+}
+
+.container a.no-decoration:hover, .container a.no-decoration:focus {
     text-decoration: none;
 }
 

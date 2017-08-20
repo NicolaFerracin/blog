@@ -11,7 +11,7 @@ block content
                 for post in getPosts()
                     if post.publish && !h.isFutureDate(post.date)
                         li.blog-post
-                            a(href=`/post/${post.slug}`)
+                            a.no-decoration(href=`/post/${post.slug}`)
                                 h3 #{post.title}
                                 time #{h.prettifyDate(post.date)}
 
