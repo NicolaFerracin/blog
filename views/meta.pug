@@ -1,1 +1,9 @@
 meta(name="viewport" content="width=device-width, initial-scale=1.0")
+meta(name="author" content="Nicola Ferracin")
+
+if post
+    meta(name="keywords" content=`${post.tags},blog,Nicola Ferracin,Frontend Development`)
+    meta(name="description" content=`${post.title} - ${post.description}`)
+else
+    meta(name="keywords" content="JavaScript,programming,development,blog,Nicola Ferracin,CSS,HTML,API,responsive,tutorial,learning,web development,web,frontend,full stack,mean,mongodb,node,express,angular,bootstrap,frontend developer,jquery")
+    meta(name="description" content="Developer Blog by Nicola Ferracin. Read about programming with JavaScript and much more.")
