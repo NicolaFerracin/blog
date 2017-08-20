@@ -60,7 +60,7 @@ strong {
 .mdl-card__content h4,
 .mdl-card__content h5,
 .mdl-card__content h6 {
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .mdl-card__content img {
