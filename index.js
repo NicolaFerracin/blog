@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 dotenv.config();
 const helpers = require('./helpers');
-const json = require('./json');
+const json = process.env.NODE_ENV === 'production' ? require('./json') : null;
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 8080;
