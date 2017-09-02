@@ -1,9 +1,9 @@
 {{{
   "title": "GitHub widget Tutorial",
-  "tags": ["JavaScript", "August 2017", "Tutorial", "API", "Vanilla JS", "Function Programming", "GitHub"],
+  "tags": ["JavaScript", "August 2017", "Tutorial", "API", "Functional Programming", "GitHub"],
   "date": "8-17-2017",
   "id": "b6118519-8d3e-4913-b185-f8bcfb58435e",
-  "description": "A tutorial on how to build a widget using Vanilla JavaScript and GitHub API.",
+  "description": "Build a widget using JavaScript and the GitHub API - Part 1",
   "publish": true
 }}}
 
